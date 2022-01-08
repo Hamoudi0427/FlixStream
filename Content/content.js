@@ -18,9 +18,9 @@ const key = "5c21432d53d7ca13815884308871437c";
 //will find the movie entered by the user in the netflix search bar
 function findSearchedMovie(){
     let no_results = document.querySelector(".noResults p");
+    let suggestions = document.querySelector(".suggestions");
 
     if (no_results){
-
         let no_results_message = no_results.textContent;
         let index = [];
 
@@ -35,7 +35,15 @@ function findSearchedMovie(){
 
         //call TMDB API to check if the movie/tv show is a real movie
         checkMovie(movie_name);
+    }
+    else if (suggestions){
+        //get movie name from search bar
+        const search_bar = document.querySelector("#searchInput");
+        let movie_name = search_bar.getAttribute("value").replace(/\s+/g, ' ').trim().toLowerCase();
+        current_movie.name = movie_name;
 
+        //call TMDB API to check if movie exists
+        checkMovie(movie_name);
     }
 }
 
@@ -43,7 +51,7 @@ function findSearchedMovie(){
 function checkMovie(movie_name){
     //URL for movie request
     /*For testing : movie_name = "test movie"; */
-    movie_name = "the matrix";
+    //movie_name = "war of the worlds";
     let url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${movie_name}
         &include_adult=false`;
     
