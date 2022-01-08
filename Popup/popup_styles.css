@@ -1,0 +1,71 @@
+html{
+    background-color: black;
+}
+
+/* Styling for the streaming site selections */
+
+h1{
+    color: lightblue;
+    text-align: center;
+    font-size: 20px;
+    font-weight: normal;
+    padding-bottom: 3%;
+}
+
+.choices{
+    display: flex;
+    color: lightblue;
+    justify-content: space-between;
+    width: 400px;
+    height: 100px;
+}
+
+.choices div{
+    width : 100px;
+    text-align: center;
+}
+
+.choices div p{
+    text-align: center;
+    margin: auto;
+    font-size: 11px;
+    padding-top: 3%;
+    font-weight: lighter;
+}
+
+.choices img{
+    width: 13vw;
+    height: 13vw;
+    margin: auto;
+}
+
+/* Styling for movie found section */
+
+.fa{
+    color: white;
+}
+
+.movie_found{
+    display: flex;
+    
+}
+
+.movie_found_picture{
+    width: 260px;
+    height: 200px;
+    padding: 2%;
+    border-radius: 6%;
+}
+
+.movie_found_arrow{
+    width: 110px;
+    padding: 3%;
+}
+
+.movie_found_arrow i{
+    padding: 30%;
+    padding-top: 50%;
+    font-size: 80px;
+    color: lightgrey;
+    margin: auto;
+}
