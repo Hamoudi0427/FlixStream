@@ -61,7 +61,7 @@ function checkMovie(movie_name){
         for (let i = 0; i < data.results.length; i++){
             if (data.results[i].title.replace(/\s+/g, ' ').trim().toLowerCase() === movie_name.replace(/\s+/g, ' ').trim().toLowerCase()){
                 current_movie.id = data.results[i].id;
-                current_movie.movie_image = data.results[i].backdrop_path;
+                current_movie.movie_image = "https://image.tmdb.org/t/p/w500" + data.results[i].backdrop_path;
                 
                 //get watch providers
                 console.log("Movie is found. Begin search for watch providers.\n");
@@ -124,7 +124,7 @@ function getWatchProviders(movie_id){
 
         })
     })
-    .catch((err) => console.log("Error: Could not get back watch providers.\n"));
+    .catch((err) => console.log(err.message));
 }
 
 //updates stored movie so that it can be displayed in the popup window

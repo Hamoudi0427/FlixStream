@@ -1,4 +1,4 @@
-/* Check the user's previous preferences to apply selection styling */
+/* Edits popup based on user selected watch providers and movie searches */
 
 /* Amazon Prime Video */
 
