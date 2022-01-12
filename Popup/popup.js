@@ -121,14 +121,23 @@ document.querySelector(".crave_icon").addEventListener("click", () => {
 chrome.storage.sync.get(['movie'], (result) => {
     //display current movie info on the pop up
     if (result.movie.movie_found === false){
-        //change title to movie not found
+        //show that movie is not found in the popup (default img, default arrow and title)
         const movie_header = document.querySelector(".movie h1");
         movie_header.textContent = "Movie not found on your streaming sites :(";
+
+        const movie_image = document.querySelector(".movie_found img");
+        movie_image.setAttribute("src", "../Utils/default_movie.jpg");
+
+        const movie_arrow = document.querySelector(".movie_found_arrow i");
+        movie_arrow.style.color = "lightgrey";
+
+        const movie_link = document.querySelector(".movie_found_arrow a");
+        movie_link.setAttribute("href", "");
     }
     else{
         //display that the movie is found and where
         const movie_header = document.querySelector(".movie h1");
-        movie_header.textContent = `"${result.movie.movie_title}" found on "${result.movie.movie_site}"`;
+        movie_header.textContent = `"${result.movie.movie_title}" found on ${result.movie.movie_site}`;
         
         //change arrow color to indicate movie is found
         const arrow = document.querySelector(".movie_found_arrow i");

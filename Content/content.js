@@ -50,10 +50,7 @@ function findSearchedMovie(){
 //will check if the entered movie is valid
 function checkMovie(movie_name){
     //URL for movie request
-    /*For testing : movie_name = "test movie"; */
-    //movie_name = "war of the worlds";
-    let url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${movie_name}
-        &include_adult=false`;
+    let url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${movie_name}&include_adult=false`;
     
     //make request
     let info = {};
@@ -68,6 +65,7 @@ function checkMovie(movie_name){
                 
                 //get watch providers
                 console.log("Movie is found. Begin search for watch providers.\n");
+                current_movie.name = data.results[i].title;
                 getWatchProviders(current_movie.id);
                 break;
             }
