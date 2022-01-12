@@ -121,7 +121,6 @@ function getWatchProviders(movie_id){
                     break;
                 }
             }
-
         })
     })
     .catch((err) => console.log(err.message));
