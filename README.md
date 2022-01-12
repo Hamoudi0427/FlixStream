@@ -3,7 +3,7 @@ FlixStream is a chrome extension that checks your other streaming subscriptions 
 
 # Demo
 
-<em>1\)</em> Select your subscription sites
+1\) Select your subscription sites
 
 <img src="Demo/sites.jpg">
 
