@@ -12,11 +12,11 @@ chrome.storage.sync.get(['prime_video'], (result) => {
 
     //change styling based on that state
     if (prime_video_state){
-        prime_video_icon.style.border = "4px solid lightblue";
+        prime_video_icon.style.border = "3px solid lightblue";
         prime_video_icon.setAttribute("class", "prime_video_icon selected");
     }
     else{
-        prime_video_icon.style.border = "3px solid grey";
+        prime_video_icon.style.border = "2px solid grey";
         prime_video_icon.setAttribute("class", "prime_video_icon unselected");
     }
 });
@@ -27,11 +27,11 @@ document.querySelector(".prime_video_icon").addEventListener("click", () => {
 
     if (prime_video_icon.getAttribute("class") === "prime_video_icon selected"){
         prime_video_icon.setAttribute("class", "prime_video_icon unselected");
-        prime_video_icon.style.border = "3px solid grey";
+        prime_video_icon.style.border = "2px solid grey";
         chrome.storage.sync.set({prime_video : false});
     }
     else{
-        prime_video_icon.style.border = "4px solid lightblue";
+        prime_video_icon.style.border = "3px solid lightblue";
         prime_video_icon.setAttribute("class", "prime_video_icon selected");
         chrome.storage.sync.set({prime_video : true});
     }
@@ -51,11 +51,11 @@ chrome.storage.sync.get(['disney_plus'], (result) => {
 
     //change styling based on that state
     if (disney_plus_state){
-        disney_plus_icon.style.border = "4px solid lightblue";
+        disney_plus_icon.style.border = "3px solid lightblue";
         disney_plus_icon.setAttribute("class", "disney_plus_icon selected");
     }
     else{
-        disney_plus_icon.style.border = "3px solid grey";
+        disney_plus_icon.style.border = "2px solid grey";
         disney_plus_icon.setAttribute("class", "disney_plus_icon unselected");
     }
 });
@@ -66,11 +66,11 @@ document.querySelector(".disney_plus_icon").addEventListener("click", () => {
 
     if (disney_plus_icon.getAttribute("class") === "disney_plus_icon selected"){
         disney_plus_icon.setAttribute("class", "disney_plus_icon unselected");
-        disney_plus_icon.style.border = "3px solid grey";
+        disney_plus_icon.style.border = "2px solid grey";
         chrome.storage.sync.set({disney_plus : false});
     }
     else{
-        disney_plus_icon.style.border = "4px solid lightblue";
+        disney_plus_icon.style.border = "3px solid lightblue";
         disney_plus_icon.setAttribute("class", "disney_plus_icon selected");
         chrome.storage.sync.set({disney_plus : true});
     }
@@ -90,11 +90,11 @@ chrome.storage.sync.get(['crave'], (result) => {
 
     //change styling based on that state
     if (crave_state){
-        crave_icon.style.border = "4px solid lightblue";
+        crave_icon.style.border = "3px solid lightblue";
         crave_icon.setAttribute("class", "crave_icon selected");
     }
     else{
-        crave_icon.style.border = "3px solid grey";
+        crave_icon.style.border = "2px solid grey";
         crave_icon.setAttribute("class", "crave_icon unselected");
     }
 });
@@ -105,11 +105,11 @@ document.querySelector(".crave_icon").addEventListener("click", () => {
 
     if (crave_icon.getAttribute("class") === "crave_icon selected"){
         crave_icon.setAttribute("class", "crave_icon unselected");
-        crave_icon.style.border = "3px solid grey";
+        crave_icon.style.border = "2px solid grey";
         chrome.storage.sync.set({crave : false});
     }
     else{
-        crave_icon.style.border = "4px solid lightblue";
+        crave_icon.style.border = "3px solid lightblue";
         crave_icon.setAttribute("class", "crave_icon selected");
         chrome.storage.sync.set({crave : true});
     }
