@@ -5,7 +5,7 @@ FlixStream is a chrome extension that checks your other streaming subscriptions 
 
 1\) Select your subscription sites
 
-<img src="Demo/sites.jpg">
+<img src="Demo/sites.jpg" size="70%">
 
 2\) Search your movie on Netflix
 
