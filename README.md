@@ -15,6 +15,6 @@ FlixStream is a chrome extension that checks your other streaming subscriptions 
 
 <img src="Demo/found.jpg">
 
-4\) Click on arrow to take you to your movie
+4\) Click on the blue arrow to take you to your movie
 
 <img src="Demo/crave_found.jpg">
