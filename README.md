@@ -14,3 +14,7 @@ FlixStream is a chrome extension that checks your other streaming subscriptions 
 3\) If you movie is not available on Netflix, open the popup window to check if it is available on your other streaming sites
 
 <img src="Demo/found.jpg">
+
+4\) Click on arrow to take you to your movie
+
+<img src="Demo/crave_found.jpg">
