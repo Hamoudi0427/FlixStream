@@ -97,6 +97,9 @@ function getWatchProviders(movie_id){
                 crave_check = true;
             }
             
+            //checks if found
+            let found = false;
+
             //based on user choice find available sites for the selected movie
             for (let i = 0; i < data.results.CA.flatrate.length; i++){
                 if (data.results.CA.flatrate[i].provider_name === "Amazon Prime Video" && prime_check){
@@ -104,6 +107,10 @@ function getWatchProviders(movie_id){
                     current_movie.movie_site = "Amazon Prime Video"; 
                     current_movie.site_url = "https://www.primevideo.com";
                     changeStoredMovie(); 
+
+                    //allow the movie to be displayed
+                    chrome.storage.sync.set({show_popup : true});
+                    setTimeout(() => {chrome.storage.sync.set({show_popup : false})}, 20000);
                     break;
                 }
                 else if (data.results.CA.flatrate[i].provider_name === "Disney Plus" && disney_check){
@@ -111,6 +118,10 @@ function getWatchProviders(movie_id){
                     current_movie.movie_site = "Disney Plus";
                     current_movie.site_url = "https://www.disneyplus.com/en-ca"; 
                     changeStoredMovie();
+
+                    //allow the movie to be displayed
+                    chrome.storage.sync.set({show_popup : true});
+                    setTimeout(() => {chrome.storage.sync.set({show_popup : false})}, 20000);
                     break;
                 }
                 else if (data.results.CA.flatrate[i].provider_name === "Crave" && crave_check){
@@ -118,10 +129,14 @@ function getWatchProviders(movie_id){
                     current_movie.movie_site = "Crave";
                     current_movie.site_url = "https://www.crave.ca/en";
                     changeStoredMovie();
+
+                    //allow the movie to be displayed
+                    chrome.storage.sync.set({show_popup : true});
+                    setTimeout(() => {chrome.storage.sync.set({show_popup : false})}, 20000);
                     break;
                 }
             }
-        })
+        });
     })
     .catch((err) => console.log(err.message));
 }

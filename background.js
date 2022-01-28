@@ -5,6 +5,12 @@ let prime_video = true;
 let disney_plus = true;
 let crave = true;
 
+//determines if popup will display the movie 
+let show_popup = false;
+chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.sync.set({show_popup});
+})
+
 //stores the default settings using the storage API when extension is downloaded
 chrome.runtime.onInstalled.addListener(() => {
     chrome.storage.sync.set({prime_video});
@@ -30,3 +36,6 @@ chrome.runtime.onInstalled.addListener(() => {
 
     console.log(`Movie info initialized.\n`);
 })
+
+//To-Do
+//Add a movie not found popup

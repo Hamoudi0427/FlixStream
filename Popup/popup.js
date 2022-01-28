@@ -118,12 +118,50 @@ document.querySelector(".crave_icon").addEventListener("click", () => {
 });
 
 /* Movie Found Section and Arrow */
-chrome.storage.sync.get(['movie'], (result) => {
-    //display current movie info on the pop up
-    if (result.movie.movie_found === false){
-        //show that movie is not found in the popup (default img, default arrow and title)
+chrome.storage.sync.get(['show_popup'], (response) => {
+    if (response.show_popup){
+        chrome.storage.sync.get(['movie'], (result) => {
+            //display current movie info on the pop up
+            if (result.movie.movie_found === false){
+                //show that movie is not found in the popup (default img, default arrow and title)
+                const movie_header = document.querySelector(".movie h1");
+                movie_header.textContent = "Movie not found on your streaming sites :(";
+
+                const movie_image = document.querySelector(".movie_found img");
+                movie_image.setAttribute("src", "../Utils/default_movie.jpg");
+
+                const movie_arrow = document.querySelector(".movie_found_arrow i");
+                movie_arrow.style.color = "lightgrey";
+
+                const movie_link = document.querySelector(".movie_found_arrow a");
+                movie_link.setAttribute("href", "");
+            }
+            else{
+                //display that the movie is found and where
+                const movie_header = document.querySelector(".movie h1");
+                movie_header.textContent = `"${result.movie.movie_title}" found on ${result.movie.movie_site}`;
+                
+                //change arrow color to indicate movie is found
+                const arrow = document.querySelector(".movie_found_arrow i");
+                arrow.style.color = "lightblue";
+
+                //change src or image
+                const movie_image = document.querySelector(".movie_found img");
+                movie_image.setAttribute("src", result.movie.movie_image);
+
+                //add a link on the arrow
+                const link = document.querySelector(".movie_found_arrow a");
+                link.setAttribute("href", `${result.movie.movie_url}`);
+                link.onclick = () => {
+                    chrome.tabs.create({active : true, url : link.getAttribute("href")});
+                }
+            }
+        });
+    }
+    else{
+        //default movie header
         const movie_header = document.querySelector(".movie h1");
-        movie_header.textContent = "Movie not found on your streaming sites :(";
+        movie_header.textContent = "- - -";
 
         const movie_image = document.querySelector(".movie_found img");
         movie_image.setAttribute("src", "../Utils/default_movie.jpg");
@@ -133,26 +171,6 @@ chrome.storage.sync.get(['movie'], (result) => {
 
         const movie_link = document.querySelector(".movie_found_arrow a");
         movie_link.setAttribute("href", "");
-    }
-    else{
-        //display that the movie is found and where
-        const movie_header = document.querySelector(".movie h1");
-        movie_header.textContent = `"${result.movie.movie_title}" found on ${result.movie.movie_site}`;
-        
-        //change arrow color to indicate movie is found
-        const arrow = document.querySelector(".movie_found_arrow i");
-        arrow.style.color = "lightblue";
-
-        //change src or image
-        const movie_image = document.querySelector(".movie_found img");
-        movie_image.setAttribute("src", result.movie.movie_image);
-
-        //add a link on the arrow
-        const link = document.querySelector(".movie_found_arrow a");
-        link.setAttribute("href", `${result.movie.movie_url}`);
-        link.onclick = () => {
-            chrome.tabs.create({active : true, url : link.getAttribute("href")});
-        }
     }
 });
 
