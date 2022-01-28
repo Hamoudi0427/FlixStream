@@ -1,5 +1,5 @@
 # FlixStream
-FlixStream is a chrome extension that checks your other streaming subscriptions for movies / tv shows if they cannot be found on Netflix using the TMDB API.
+FlixStream is a chrome extension that uses the TMDB API to check your other streaming subscriptions for movies / tv shows if they cannot be found on Netflix.
 
 # Demo
 
@@ -7,11 +7,11 @@ FlixStream is a chrome extension that checks your other streaming subscriptions 
 
 <img src="Demo/sites.jpg">
 
-2\) Search your movie on Netflix
+2\) Search for your movie on Netflix
 
 <img src="Demo/not_found.jpg">
 
-3\) If you movie is not available on Netflix, open the popup window to check if it is available on your other streaming sites
+3\) If your movie is not available on Netflix, open the popup window to check if it is available on your other sites
 
 <img src="Demo/found.jpg">
 
