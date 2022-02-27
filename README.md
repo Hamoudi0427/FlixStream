@@ -18,3 +18,9 @@ FlixStream is a chrome extension that uses the TMDB API to check your other stre
 4\) Click on the blue arrow to take you to your movie
 
 <img src="Demo/crave_found.jpg">
+
+# To-Do
+
+1) Justwatch API for deep links
+2) Add feature where it notifies user of movie that they searched when it becomes available (backend)
+3) Rework UI
